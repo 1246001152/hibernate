@@ -1,11 +1,13 @@
 package com.xm.test;
 
 import com.xm.entity.Teacher;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class JunitTest {
@@ -81,5 +83,32 @@ public class JunitTest {
         session.getTransaction().commit();
         session.close();
     }
-
+    @Test
+    public void querySQL() {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        // 注意查询的是类名
+        String sql = "select * from t_teacher";
+        Query query = session.createSQLQuery(sql);
+        List<Object[]> list = query.list();
+        for (Object[] objects : list) {
+            System.out.println(Arrays.toString(objects));
+        }
+        session.getTransaction().commit();
+        session.close();
+    }
+    @Test
+    public void queryCriteria() {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        // 注意查询的是类名
+        String sql = "select * from t_teacher";
+        Criteria criteria = session.createCriteria(Teacher.class);
+        List<Teacher> list = criteria.list();
+        for (Teacher teacher : list) {
+            System.out.println(teacher);
+        }
+        session.getTransaction().commit();
+        session.close();
+    }
 }
