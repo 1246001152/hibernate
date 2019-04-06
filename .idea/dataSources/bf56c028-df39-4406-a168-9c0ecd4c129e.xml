@@ -815,53 +815,5 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="205" parent="7" name="classes">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="206" parent="7" name="t_student">
-      <Engine>MyISAM</Engine>
-    </table>
-    <column id="207" parent="205" name="C_ID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="208" parent="205" name="CLASSNAME">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="209" parent="205" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>C_ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="210" parent="206" name="S_ID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="211" parent="206" name="NAME">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="212" parent="206" name="C_ID">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="213" parent="206" name="FKnnq0vcecw2hqpb3s6r969nj2u">
-      <ColNames>C_ID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="214" parent="206" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>S_ID</ColNames>
-      <Primary>1</Primary>
-    </key>
   </database-model>
 </dataSource>

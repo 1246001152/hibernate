@@ -10,15 +10,15 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="com.xm.entity">
+<hibernate-mapping package="com.xm.entity" >
 
-    <class name="Student" table="t_student">
+    <class name="Student" table="t_student" >
         <id name="id" column="S_ID">
             <generator class="native"/>
         </id>
         <property name="name" type="java.lang.String" column="NAME"/>
         <!-- 默认 cascade=none  强制级联保存用cascade=sava-update  -->
-        <many-to-one name="classes" column="C_ID" class="com.xm.entity.Classes" cascade="save-update"></many-to-one>
+        <many-to-one  name="classes" column="C_ID" class="com.xm.entity.Classes" cascade="save-update"></many-to-one>
     </class>
 
 </hibernate-mapping>

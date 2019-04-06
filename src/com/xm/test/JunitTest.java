@@ -52,4 +52,26 @@ public class JunitTest {
             System.out.println(student);
         }
     }
+
+    @Test
+    public void testAdd(){
+        Classes classes =  new Classes();
+        classes.setClassName("高123");
+
+        Student stu1 =  new Student();
+        stu1.setName("zhangjinfei11");
+        session.save(classes);
+        session.save(stu1);
+    }
+
+    @Test
+    public void testInverse(){
+        Classes classes =  session.get(Classes.class,1);
+        Student stu1 =  session.get(Student.class,1);
+        /*
+            Inverse 双向绑定时 在一对多的配置文件中设置
+         */
+        stu1.setClasses(classes);
+        classes.getStudentSet().add(stu1);
+    }
 }
