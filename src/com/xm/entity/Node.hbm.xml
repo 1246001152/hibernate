@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.xm.entity">
+
+    <class name="Node" table="node">
+        <id name="id" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="name" type="java.lang.String" column="name"/>
+        <many-to-one name="pNode" column="p_node" class="Node" cascade="save-update"></many-to-one>
+
+        <!-- cascade="save-update"  强制级联保存  inverse="true" 双向绑定添加  -->
+        <set name="set" cascade="save-update" inverse="true">
+            <key column="ID"></key>
+            <one-to-many class="Node"></one-to-many>
+        </set>
+
+    </class>
+
+</hibernate-mapping>

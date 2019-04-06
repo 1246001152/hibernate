@@ -41,6 +41,7 @@
         <!-- Names the annotated entity class -->
         <mapping resource="com/xm/entity/Student.hbm.xml" />
         <mapping resource="com/xm/entity/Classes.hbm.xml" />
+        <mapping resource="com/xm/entity/Node.hbm.xml" />
 
     </session-factory>
 

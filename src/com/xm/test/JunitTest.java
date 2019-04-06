@@ -1,6 +1,7 @@
 package com.xm.test;
 
 import com.xm.entity.Classes;
+import com.xm.entity.Node;
 import com.xm.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -80,5 +81,21 @@ public class JunitTest {
         Classes classes = session.get(Classes.class, 1);
 
         session.delete(classes);
+    }
+
+    @Test
+    public void testAddNode(){
+
+        Node node =  new Node();
+        node.setName("根节点");
+        Node node1 =  new Node();
+        node1.setName("子节点1");
+        Node node2 =  new Node();
+        node2.setName("子节点2");
+
+        node1.setpNode(node);
+        node2.setpNode(node);
+        session.save(node1);
+        session.save(node2);
     }
 }
