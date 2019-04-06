@@ -5,9 +5,6 @@ import com.xm.entity.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class StudentTest {
 
@@ -18,9 +15,9 @@ public class StudentTest {
 //      SessionFactory sessionFactory = configuration.buildSessionFactory();
 
 //      Hibernate 5.0 创建sessionFactory
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
-        SessionFactory sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-
+//      StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
+//      SessionFactory sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        SessionFactory sessionFactory=HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Student s=  new Student();

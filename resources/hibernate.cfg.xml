@@ -23,9 +23,8 @@
         <property name="connection.pool_size">1</property>
 
         <!-- SQL dialect -->
-         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
         <!-- engine=MyISAM -->
-        <!--<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <!--  engine=InnoDB -->
         <!--<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>-->
         <!-- Disable the second-level cache  -->
@@ -41,6 +40,7 @@
 
         <!-- Names the annotated entity class -->
         <mapping resource="com/xm/entity/Student.hbm.xml"/>
+        <mapping class="com.xm.entity.Teacher" />
 
     </session-factory>
 
