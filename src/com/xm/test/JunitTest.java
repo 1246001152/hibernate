@@ -66,5 +66,20 @@ public class JunitTest {
         session.getTransaction().commit();
         session.close();
     }
+    @Test
+    public void queryTest() {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Teacher t1= session.get(Teacher.class ,1);
+        Teacher t2= session.get(Teacher.class ,2);
+        Teacher t3= session.get(Teacher.class ,1);
+
+        System.out.println(t1==t2);
+        System.out.println(t1==t3);
+
+
+        session.getTransaction().commit();
+        session.close();
+    }
 
 }
