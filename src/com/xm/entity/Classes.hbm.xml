@@ -17,7 +17,11 @@
             <generator class="increment"/>
         </id>
         <property name="className" type="java.lang.String" column="CLASSNAME"/>
-
+        <!-- cascade="save-update"  强制级联保存 -->
+        <set name="studentSet" cascade="save-update">
+            <key column="C_ID"></key>
+            <one-to-many class="Student"></one-to-many>
+        </set>
 
     </class>
 

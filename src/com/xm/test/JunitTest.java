@@ -8,6 +8,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Set;
+
 public class JunitTest {
     private Session session=null;
 
@@ -39,5 +41,15 @@ public class JunitTest {
         stu2.setClasses(classes);
         session.save(stu1);
         session.save(stu2);
+    }
+
+    @Test
+    public void getStudentByClasses(){
+
+        Classes classes = session.get(Classes.class, 1);
+        Set<Student> studentSet = classes.getStudentSet();
+        for (Student student:studentSet) {
+            System.out.println(student);
+        }
     }
 }
