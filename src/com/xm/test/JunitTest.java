@@ -67,11 +67,18 @@ public class JunitTest {
     @Test
     public void testInverse(){
         Classes classes =  session.get(Classes.class,1);
-        Student stu1 =  session.get(Student.class,1);
+        Student stu1 =  session.get(Student.class,2);
         /*
             Inverse 双向绑定时 在一对多的配置文件中设置
          */
         stu1.setClasses(classes);
         classes.getStudentSet().add(stu1);
+    }
+    @Test
+    public void testDeleteCalsses(){
+        // 级联删除  改变 cascade = delete  实现级联删除
+        Classes classes = session.get(Classes.class, 1);
+
+        session.delete(classes);
     }
 }
