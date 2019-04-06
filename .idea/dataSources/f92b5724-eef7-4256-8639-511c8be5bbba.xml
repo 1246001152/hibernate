@@ -928,10 +928,11 @@
       <ColNames>S_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="230" parent="209" name="tId">
+    <column id="230" parent="209" name="t_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="231" parent="209" name="sex">
@@ -946,7 +947,7 @@
     </column>
     <key id="233" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>tId</ColNames>
+      <ColNames>t_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="234" parent="210" name="uid">

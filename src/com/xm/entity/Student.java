@@ -2,17 +2,17 @@ package com.xm.entity;
 
 public class Student {
 
-    private Integer id;
+    private int id;
     private String name;
-    private Integer age;
+    private int age;
 
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -24,11 +24,11 @@ public class Student {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
