@@ -39,4 +39,13 @@ public class Teacher {
     public void setSex(String sex) {
         this.sex = sex;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tId=" + tId +
+                ", tName='" + tName + '\'' +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }
