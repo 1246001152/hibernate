@@ -27,7 +27,8 @@
         <mapping resource="com/hibernate/entity/Classes.hbm.xml"/>
         <mapping resource="com/hibernate/one_one/entity/HusBand.hbm.xml"/>
         <mapping resource="com/hibernate/one_one/entity/Wife.hbm.xml"/>
-
+        <mapping resource="com/hibernate/one_one/entity/JoinPart.hbm.xml"/>
+        <mapping resource="com/hibernate/one_one/entity/Employee.hbm.xml"/>
 
     </session-factory>
 
