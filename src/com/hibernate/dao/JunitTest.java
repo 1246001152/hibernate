@@ -1,6 +1,8 @@
 package com.hibernate.dao;
 
+import com.hibernate.entity.Menu;
 import com.hibernate.entity.Role;
+import com.hibernate.entity.Role01;
 import com.hibernate.entity.User;
 import com.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
@@ -56,6 +58,28 @@ public class JunitTest {
         User user = session.get(User.class, 1);
         Role role = session.get(Role.class, 1);
         user.getRole().add(role);
+    }
+
+    @Test
+    public void addRoleAndMenu(){
+
+        Menu menu1 = new Menu();
+        menu1.setName("管理员url");
+        Menu menu2 = new Menu();
+        menu2.setName("安保url");
+
+        Role01 role01 =  new Role01();
+        role01.setName("管理员");
+        role01.getSet().add(menu1);
+        role01.getSet().add(menu2);
+
+        Role01 role02 =  new Role01();
+        role02.setName("保安");
+        role02.getSet().add(menu2);
+
+        session.save(role01);
+        session.save(role02);
+
     }
 
 }

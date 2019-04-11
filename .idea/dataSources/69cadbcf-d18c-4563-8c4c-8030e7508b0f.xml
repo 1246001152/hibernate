@@ -821,77 +821,148 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="207" parent="9" name="role"/>
-    <table id="208" parent="9" name="user"/>
-    <table id="209" parent="9" name="user_role"/>
-    <column id="210" parent="207" name="r_id">
+    <table id="207" parent="9" name="menu"/>
+    <table id="208" parent="9" name="role"/>
+    <table id="209" parent="9" name="role_01"/>
+    <table id="210" parent="9" name="role_menu"/>
+    <table id="211" parent="9" name="user"/>
+    <table id="212" parent="9" name="user_role"/>
+    <column id="213" parent="207" name="m_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="211" parent="207" name="s_name">
+    <column id="214" parent="207" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="212" parent="207" name="PRIMARY">
+    <key id="215" parent="207" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>m_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="216" parent="208" name="r_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="217" parent="208" name="s_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="218" parent="208" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>r_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="213" parent="208" name="u_id">
+    <column id="219" parent="209" name="r_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="214" parent="208" name="username">
+    <column id="220" parent="209" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="208" name="password">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="216" parent="208" name="PRIMARY">
+    <key id="221" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>u_id</ColNames>
+      <ColNames>r_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="217" parent="209" name="u_id">
+    <column id="222" parent="210" name="r_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="209" name="r_id">
+    <column id="223" parent="210" name="m_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="219" parent="209" name="FKhqbsm81qe5n0g3phrjs0kucos">
+    <index id="224" parent="210" name="FK607u1jm9fonryx9y7or7io593">
+      <ColNames>m_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="225" parent="210" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>r_id
+m_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="226" parent="210" name="FKdm5bk3eiv9b91colifrce3rao">
+      <ColNames>r_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>role_01</RefTableName>
+      <RefColNames>r_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="227" parent="210" name="FK607u1jm9fonryx9y7or7io593">
+      <ColNames>m_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>menu</RefTableName>
+      <RefColNames>m_id</RefColNames>
+    </foreign-key>
+    <column id="228" parent="211" name="u_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="229" parent="211" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="230" parent="211" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="231" parent="211" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>u_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="232" parent="212" name="u_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="233" parent="212" name="r_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="234" parent="212" name="FKhqbsm81qe5n0g3phrjs0kucos">
       <ColNames>u_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="220" parent="209" name="PRIMARY">
+    <key id="235" parent="212" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>r_id
 u_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="221" parent="209" name="FKhqbsm81qe5n0g3phrjs0kucos">
+    <foreign-key id="236" parent="212" name="FKhqbsm81qe5n0g3phrjs0kucos">
       <ColNames>u_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>u_id</RefColNames>
     </foreign-key>
-    <foreign-key id="222" parent="209" name="FKto8gqveqi41eyylx7a2tqlfip">
+    <foreign-key id="237" parent="212" name="FKto8gqveqi41eyylx7a2tqlfip">
       <ColNames>r_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>role</RefTableName>
