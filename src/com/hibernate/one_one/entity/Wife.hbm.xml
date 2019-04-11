@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+        <!DOCTYPE hibernate-mapping PUBLIC
+                "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- package="com.hibernate.entity" -->
+<hibernate-mapping  > <!-- mapping 是hibernate映射文件  -->
+<!--  name=类名   table=表名   -->
+<class name="com.hibernate.one_one.entity.Wife" table="wife"  >
+    <!--id 主键  name 属性  column 列名   type 类名  -->
+    <id name="id" column="w_id"  >
+        <!--  主键生成策略  increment hibernate框架的生成策略
+         identity  mysql 底层数据库生成表识符
+         native 是mysql数据库  -->
+        <generator class="native" />
+    </id>
+
+    <property name="name" type="java.lang.String" column="w_name"   />
+    <!--
+        共享主键
+    -->
+    <one-to-one name="husBand" constrained="true" class="com.hibernate.one_one.entity.HusBand" ></one-to-one>
+</class>
+
+</hibernate-mapping>
